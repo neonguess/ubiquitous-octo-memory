@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title></title>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.min.js"></script>
+    <script src="chart.min.js"></script>
 
   </head>
   <body>
@@ -15,18 +15,20 @@
     https://www.chartjs.org/docs/latest/charts/bubble.html -->
     <script type="text/javascript">
 
+    
+
       const data = {
         datasets: [{
           label: 'First Dataset',
-          data: [{
-            x: 20,
-            y: 30,
-            r: 15
-          }, {
-            x: 40,
-            y: 10,
-            r: 10
-          }],
+          data: [{x: 20, y: 30},
+                 {x: 10, y: 21},
+                 {x: 2, y: 16},
+                 {x: 25, y: 3},
+                 {x: 14, y: 5},
+                 {x: 16, y: 9},
+                 {x: 5, y: 14},
+                 {x: 40, y: 10}
+               ],
           backgroundColor: 'rgb(255, 99, 132)'
         }]
       };
@@ -39,14 +41,14 @@
           },
           title: {
             display: true,
-            text: 'Un premier graph bubble'
+            text: 'Un premier graph'
           }
         }
       }
 
       const config = {
-        type: 'bubble',
-        data: data,{}
+        type: 'scatter',
+        data: data,
         options: options
       };
 
