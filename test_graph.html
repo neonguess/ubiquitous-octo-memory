@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.min.js"></script>
+
+  </head>
+  <body>
+
+    <canvas id="graph1" width="200" height="200"></canvas>
+
+    <!-- à partir des exemples sur https://www.chartjs.org/docs/latest/ et
+    https://www.chartjs.org/docs/latest/charts/bubble.html -->
+    <script type="text/javascript">
+
+      const data = {
+        datasets: [{
+          label: 'First Dataset',
+          data: [{
+            x: 20,
+            y: 30,
+            r: 15
+          }, {
+            x: 40,
+            y: 10,
+            r: 10
+          }],
+          backgroundColor: 'rgb(255, 99, 132)'
+        }]
+      };
+
+      const options = {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'top',
+          },
+          title: {
+            display: true,
+            text: 'Un premier graph bubble'
+          }
+        }
+      }
+
+      const config = {
+        type: 'bubble',
+        data: data,{}
+        options: options
+      };
+
+      var ctx = document.getElementById('graph1');
+
+      var myChart = new Chart(ctx, config);
+
+    </script>
+
+  </body>
+</html>
