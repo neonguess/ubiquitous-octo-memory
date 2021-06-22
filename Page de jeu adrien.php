@@ -171,10 +171,11 @@
   $C= $W1+$W2+$W3+$W4+$W5+$W6+$W7+$W8+$W9+$W10+$W11+$W12+$W13+$W14+$W15+$W16+$W17+$W18+$W19+$W20;
   $B= $V1+$V2+$V3+$V4+$V5+$V6+$V7+$V8+$V9+$V10+$V11+$V12+$V13+$V14+$V15+$V16+$V17+$V18+$V19+$V20;
   $R2= ($C-$B)/$C;
+  $R2= round($R2,2)
 
  ?>
 
- <canvas id="graph1" width="200" height="200"></canvas>
+ <canvas id="graph1" width="1px" height="1px"></canvas>
 
    <!-- à partir des exemples sur https://www.chartjs.org/docs/latest/ et
    https://www.chartjs.org/docs/latest/charts/bubble.html -->
@@ -186,7 +187,7 @@
        datasets: [{
          label: 'First Dataset',
          data: [
-         {x: <?php echo "$P1X"; ?>, y:<?php echo "$P1Y"; ?> },
+         {x: <?php echo "$P1X"; ?>, y:<?php echo "$P1Y"; ?>},
          {x: <?php echo "$P2X"; ?>, y:<?php echo "$P2Y"; ?> },
          {x: <?php echo "$P3X"; ?>, y:<?php echo "$P3Y"; ?> },
          {x: <?php echo "$P4X"; ?>, y:<?php echo "$P4Y"; ?> },
@@ -215,17 +216,17 @@
        responsive: true,
        plugins: {
          legend: {
-           position: 'top',
+           position: 'bottom',
          },
          title: {
            display: true,
-           text: 'Un premier graph'
+           text: 'Trouvez la corrélation'
          }
        }
      }
 
      const config = {
-       type: 'scatter',
+       type: 'bubble',
        data: data,
        options: options
      };
@@ -237,7 +238,7 @@
    </script>
    <?php
 
-  echo "  <h1> $R2 </h1>";
+  echo "  <h1> la corrélation est de $R2 </h1>";
 
     ?>
 
