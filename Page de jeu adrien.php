@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8">
 <title>Neonguess</title>
-<script scr="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.min.js">
+<script src="chart.min.js"></script>
 
 
 </script>
@@ -15,14 +15,6 @@
 
 <h1>Partie</h1>
 <h2>Trouve la corrélation du nuage de points ci-dessous !</h2>
-<br><br><br><br><br><br><br><br><br>
-
-
-
-<form name="poster" method="post" action="Form2Test.php">
-Corrélation : <input type="text" name="correlation" />
-<input type="submit" name="valider" value="OK"/> <br />
-</form>
 
 <?php
 
@@ -179,8 +171,85 @@ Corrélation : <input type="text" name="correlation" />
   $C= $W1+$W2+$W3+$W4+$W5+$W6+$W7+$W8+$W9+$W10+$W11+$W12+$W13+$W14+$W15+$W16+$W17+$W18+$W19+$W20;
   $B= $V1+$V2+$V3+$V4+$V5+$V6+$V7+$V8+$V9+$V10+$V11+$V12+$V13+$V14+$V15+$V16+$V17+$V18+$V19+$V20;
   $R2= ($C-$B)/$C;
-  echo "  <h1> $R2 </h1>";
+
  ?>
+
+ <canvas id="graph1" width="200" height="200"></canvas>
+
+   <!-- à partir des exemples sur https://www.chartjs.org/docs/latest/ et
+   https://www.chartjs.org/docs/latest/charts/bubble.html -->
+   <script type="text/javascript">
+
+
+
+     const data = {
+       datasets: [{
+         label: 'First Dataset',
+         data: [
+         {x: <?php echo "$P1X"; ?>, y:<?php echo "$P1Y"; ?> },
+         {x: <?php echo "$P2X"; ?>, y:<?php echo "$P2Y"; ?> },
+         {x: <?php echo "$P3X"; ?>, y:<?php echo "$P3Y"; ?> },
+         {x: <?php echo "$P4X"; ?>, y:<?php echo "$P4Y"; ?> },
+         {x: <?php echo "$P5X"; ?>, y:<?php echo "$P5Y"; ?> },
+         {x: <?php echo "$P6X"; ?>, y:<?php echo "$P6Y"; ?> },
+         {x: <?php echo "$P7X"; ?>, y:<?php echo "$P7Y"; ?> },
+         {x: <?php echo "$P8X"; ?>, y:<?php echo "$P8Y"; ?> },
+         {x: <?php echo "$P9X"; ?>, y:<?php echo "$P9Y"; ?> },
+         {x: <?php echo "$P10X"; ?>, y:<?php echo "$P10Y"; ?> },
+         {x: <?php echo "$P11X"; ?>, y:<?php echo "$P11Y"; ?> },
+         {x: <?php echo "$P12X"; ?>, y:<?php echo "$P12Y"; ?> },
+         {x: <?php echo "$P13X"; ?>, y:<?php echo "$P13Y"; ?> },
+         {x: <?php echo "$P14X"; ?>, y:<?php echo "$P14Y"; ?> },
+         {x: <?php echo "$P15X"; ?>, y:<?php echo "$P15Y"; ?> },
+         {x: <?php echo "$P16X"; ?>, y:<?php echo "$P16Y"; ?> },
+         {x: <?php echo "$P17X"; ?>, y:<?php echo "$P17Y"; ?> },
+         {x: <?php echo "$P18X"; ?>, y:<?php echo "$P18Y"; ?> },
+         {x: <?php echo "$P19X"; ?>, y:<?php echo "$P19Y"; ?> },
+         {x: <?php echo "$P20X"; ?>, y:<?php echo "$P20Y"; ?> },
+              ],
+         backgroundColor: 'rgb(255, 99, 132)'
+       }]
+     };
+
+     const options = {
+       responsive: true,
+       plugins: {
+         legend: {
+           position: 'top',
+         },
+         title: {
+           display: true,
+           text: 'Un premier graph'
+         }
+       }
+     }
+
+     const config = {
+       type: 'scatter',
+       data: data,
+       options: options
+     };
+
+     var ctx = document.getElementById('graph1');
+
+     var myChart = new Chart(ctx, config);
+
+   </script>
+   <?php
+
+  echo "  <h1> $R2 </h1>";
+
+    ?>
+
+
+
+
+   <form name="poster" method="post" action="Form2Test.php">
+   Corrélation : <input type="text" name="correlation" />
+   <input type="submit" name="valider" value="OK"/> <br />
+   </form>
+
+
 
 <!-- NOTE POUR ADRIEN : Utiliser l'URL :"http://localhost/projet%20S2/Page%20de%20jeu%20(1).php" pour que ca marche-->
 </center>
