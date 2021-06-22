@@ -22,25 +22,6 @@
 <form name="poster" method="post" action="Form2Test.php">
 Corrélation : <input type="text" name="correlation" />
 <input type="submit" name="valider" value="OK"/> <br />
-
-<h3>R² : (=Cov(X;Y)²/(Var(X)×Var(Y))</h3>
-
-Taille == len(X) <br>
-moyenneX == Sum(X)/Taille<br>
-moyenneY == Sum(Y)/Taille<br>
-VarX == sum(X^2)/Taille-moyenneX^2<br>
-VarY == sum(Y^2)/Taille-moyenneY^2<br>
-i==0
-COVXY==0<br>
-While i < len(X)<br>
-  COVXY==COVXY+(()(X-moyenne X)*(X-moyenne Y))/Taille)<br>
-  i==i+1<br>
-R²==COVXY^2/VarX*VarY<br>
-
-<h3>Différence : (=correlation-R²)</h3><br>
-diffcor == Corrélation-R²
-
-<h3>différence moyenne : (moyenne(différences))</h3><br>
 </form>
 
 <?php
