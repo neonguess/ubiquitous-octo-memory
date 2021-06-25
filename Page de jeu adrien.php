@@ -175,7 +175,7 @@
 
  ?>
 
- <canvas id="graph1" width="1px" height="1px"></canvas>
+<canvas id="graph1" width="400" height="400" style= 'margin:auto'> </canvas>
 
    <!-- à partir des exemples sur https://www.chartjs.org/docs/latest/ et
    https://www.chartjs.org/docs/latest/charts/bubble.html -->
@@ -208,20 +208,13 @@
          {x: <?php echo "$P19X"; ?>, y:<?php echo "$P19Y"; ?> },
          {x: <?php echo "$P20X"; ?>, y:<?php echo "$P20Y"; ?> },
               ],
-         backgroundColor: 'rgb(255, 99, 132)'
+         backgroundColor: 'rgb(255, 0, 204)'
        }]
      };
 
      const options = {
-       responsive: true,
+       responsive: false,
        plugins: {
-         legend: {
-           position: 'bottom',
-         },
-         title: {
-           display: true,
-           text: 'Trouvez la corrélation'
-         }
        }
      }
 
@@ -236,13 +229,12 @@
      var myChart = new Chart(ctx, config);
 
    </script>
+
    <?php
 
-  echo "  <h1> la corrélation est de $R2 </h1>";
+   echo " <p>$R2</p> ";
 
     ?>
-
-
 
 
    <form name="poster" method="post" action="Form2Test.php">
@@ -252,7 +244,19 @@
 
 
 
-<!-- NOTE POUR ADRIEN : Utiliser l'URL :"http://localhost/projet%20S2/Page%20de%20jeu%20(1).php" pour que ca marche-->
+   <?php
+
+if ($a > $b) {
+   echo "a est plus grand que b";
+} elseif ($a == $b) {
+   echo "a est égal à b";
+} else {
+   echo "a est plus petit que b";
+}
+?>
+
+
+
 </center>
 </body>
 </html>
