@@ -1,0 +1,32 @@
+<!doctype html>
+<link rel="stylesheet" type="text/css" href="styleMenu.css" media="all"/>
+<html>
+    <head>
+      <!-- Favicon -->
+          <link rel="icon" type="image/png" sizes="16x16" href="C:\Users\carla\OneDrive\Images\favicon.jpg">
+          <title>Guess the correlation </title>
+    </head>
+    <body>
+
+<!--MENU-->
+
+        <h1>Menu</h1>
+
+<!--Affichage du MENU-->
+<center>
+<br>
+
+<br>
+<a href="http://localhost/projet%20S2/Page%20de%20jeu%20adrien.php" class="bouton">Nouvelle partie</a>
+<br>
+<a href="#" class="bouton">Parametres</a>
+<br>
+<a href="#" class="bouton">A propos</a>
+<br>
+<a href="https://www.instagram.com/neonguess/?hl=fr" class="bouton"> AJOUTER NOUS SUR INSTAGRAM</a>
+
+
+  </center>
+
+  </body>
+</html>
