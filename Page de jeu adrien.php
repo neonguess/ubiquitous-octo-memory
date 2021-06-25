@@ -185,7 +185,7 @@
 
      const data = {
        datasets: [{
-         label: 'First Dataset',
+         label: '',
          data: [
          {x: <?php echo "$P1X"; ?>, y:<?php echo "$P1Y"; ?>},
          {x: <?php echo "$P2X"; ?>, y:<?php echo "$P2Y"; ?> },
@@ -237,18 +237,32 @@
     ?>
 
 
-   <form action="method-post.php" method="post">
-   Corrélation : <input type="text" name="cor" />
+   <form method="post">
+   Corrélation : <input type="number" name="cor" min = 0 max = 1 step = 0.01 />
    <input type="submit" name="valider" value="OK"/> <br />
    </form>
 
 
-
   <?php
+
+    if ($R2<0) {
+
+      $R2 = $R2*-1;
+
+    }
+
       if ( isset( $_POST['valider'] ) ) {
+
            $Cor = $_POST['cor'];
-           echo 'Correlation : ', $Cor;
-           exit;}
+           echo " <p> tu pensais que la correlation était de : $Cor</p>";
+           $ECART = $Cor-$R2;
+           echo " <p> la corrélation est de : $R2</p>";
+           echo " <p> tu as un ecart de : $ECART</p>";
+
+           exit;
+
+         }
+
    ?>
 
 
