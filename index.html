@@ -1,31 +1,86 @@
-<!DOCTYPE html>
+<!doctype html>
 <link rel="stylesheet" type="text/css" href="style.css" media="all"/>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
+<html>
+    <head><!-- Favicon -->
+
+          <link rel="icon" type="image/png" sizes="16x16" href="C:\Users\carla\OneDrive\Images\favicon.jpg">
+          <title>Guess the correlation </title>
+    </head>
+    <body>
+
+<!-- Insertion logo-->
+<!--SAISIE, CONNEXION, ENREGISTREREMENT, AFFICHAGE-->
+
+        <h1> Bienvenue dans Guess The Correlation !</h1>
+        <h2>Entrez votre pseudo :</h2>
+
+<!--FORMULAIRE DE SAISIE-->
+  <center>
+		<form name="poster" method="post" action="Form2Test.php">
+            Pseudo: <input type="text" name="pseudo" />
+            <br>
+            <br>
+            Mot de passe: <input type="password" value="" id="motdepasse"> <br />
+            <h4> Afficher le mot de passe <input type="checkbox" onclick="Afficher()">
+            <script>
+              function Afficher()
+              {
+                var input = document.getElementById("motdepasse");
+                if (input.type === "password")
+                {
+                  input.type = "text";
+                }
+                else
+                {
+                  input.type = "password";
+                }
+              }
+            </script>
+          </h4>
+    </form>
+
+        <br>
+        <h5>Avant de lancer le jeu, veuillez vous connecter sur le site ou alors vous enregistrer si vous n'avez pas encore de compte</h5>
+        <h5>Nous vous demandons de vous authentifier afin de tenir un classement des perfomances.</h5>
+        <h5>L'inscription ne nécessite pas d'adresse e-mail. Choisissez un pseudo original!</h5>
+      <br>
+      <a href="file:///C:/xampp/htdocs/Projet%20S2/Accueil_Menu.html" class="bouton">C'est parti !</a>
+   </center>
+<!--DEBUT DU CODE PHP-->
+        <?php
+
+//CONNEXION SERVEUR + SELECTION//
+
+			// Déclaration des variables pour la connexion
+			$serveur = 'localhost';
+			$nom_base = 'guess_the_correlation';
+			$login = 'root';		//utilisateur par défaut
+      $motdepasse = '';  //mot de motdepasse
+
+			// connexion à MySQL
+			$id_con = mysql_connect($serveur, $login, $motdepasse);
+
+			// sélection de la base de données
+			$stat_con = mysql_select_db ($nom_base, $id_con);
+
+//ENREGISTREMENT EN BASE DE DONNEES//
 
 
+            //On récupère les valeurs entrées par l'internaute :
+            $pseudo=$_POST['pseudo'];
 
-    <title>Guess the Correlation</title>
+            $motdepasse=$_POST['mdp'];
 
-  </head>
-  <body>
+            //On prépare la commande sql d'insertion
+            $req = 'INSERT INTO info (Pseudo) VALUES("'.$pseudo.'")';
 
-    <center>
-<h1>Trouve la corrélation !</h1>
- <h2>Menu</h2>
+            //on lance la commande (mysql_query)
+            mysql_query($req) ;
 
-<a href="#" class="bouton">Nouvelle partie</a>
-<br>
-<br>
-<a href="#" class="bouton">Classement</a>
-<br>
-<br>
-<a href="#" class="bouton">Paramètres</a>
+            // on ferme la connexion
+            mysql_close();
 
-
-
-    </center>
-
-  </body>
+        ?>
+<!--FIN DU CODE PHP-->
+    </body>
 </html>
