@@ -1,0 +1,25 @@
+<!doctype html>
+<link rel="stylesheet" type="text/css" href="style.css" media="all"/>
+<html>
+    <head><!-- Favicon -->
+
+          <link rel="icon" type="image/png" sizes="16x16" href="C:\Users\carla\OneDrive\Images\favicon.jpg">
+          <title>Guess the correlation </title>
+    </head>
+    <body>
+
+        <h1>A propos</h1>
+
+        <center>
+          <br><br><br>
+          <h5>NeonGuess est un jeu créé par 5 étudiants français en juin 2021.</h5>
+          <br>
+          <h5>La création de ce jeu fait l'objet d'un projet de fin d'année qui nous permet ensuite de valider notre diplôme.</h5>
+          <br>
+          <h5>Le jeu est fortement inspiré de l'original, Guess the correlation, créé par Omar Wagih.</h5>
+          <br>
+          <h5>Nous n'avons d'ailleurs pas hésité à le contacter lorsque nous rencontrions des difficultés.</h5>
+          <br>
+          <h5>Le principe du jeu est simple il vous faut trouver la correlation la plus proche du résultat exact pour augmenter votre score.</h5>
+          <br>
+        </center>
