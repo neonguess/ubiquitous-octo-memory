@@ -1,7 +1,9 @@
 <!doctype html>
 <link rel="stylesheet" type="text/css" href="style.css" media="all"/>
-<html>
-    <head>
+<html lang="fr" xml:lang="fr" xmlns="http://www.w3.org/1999/xhtml">
+<h4> Choose your language : <span title="English"><a lang="en" href="qa-html-language-declarations.en">English</a></span>  <span title="Français"><a lang="fr" href="qa-html-language-declarations.fr">Français</a></span> <span title="Espagnol"><a lang="es" href="qa-html-language-declarations.es">Español</a></span></h4>
+  <head>
+
       <!-- Favicon -->
           <link rel="icon" type="image/png" sizes="16x16" href="C:\Users\carla\OneDrive\Images\favicon.jpg">
           <title>Guess the correlation </title>
@@ -21,7 +23,7 @@
 <br>
 <a href="#" class="bouton">Parametres</a>
 <br>
-<a href="#" class="bouton">A propos</a>
+<a href="file:///C:/xampp/htdocs/Projet%20S2/A_propos.html" class="bouton">A propos</a>
 <br>
 <a href="https://www.instagram.com/neonguess/?hl=fr" class="bouton"> AJOUTER NOUS SUR INSTAGRAM</a>
 
