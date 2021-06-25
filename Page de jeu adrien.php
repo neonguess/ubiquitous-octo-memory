@@ -237,23 +237,19 @@
     ?>
 
 
-   <form name="poster" method="post" action="Form2Test.php">
-   Corrélation : <input type="text" name="correlation" />
+   <form action="method-post.php" method="post">
+   Corrélation : <input type="text" name="cor" />
    <input type="submit" name="valider" value="OK"/> <br />
    </form>
 
 
 
-   <?php
-
-if ($a > $b) {
-   echo "a est plus grand que b";
-} elseif ($a == $b) {
-   echo "a est égal à b";
-} else {
-   echo "a est plus petit que b";
-}
-?>
+  <?php
+      if ( isset( $_POST['valider'] ) ) {
+           $Cor = $_POST['cor'];
+           echo 'Correlation : ', $Cor;
+           exit;}
+   ?>
 
 
 
