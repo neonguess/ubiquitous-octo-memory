@@ -13,7 +13,7 @@
 <body>
 <center>
 
-<h1>Partie</h1>
+<h1>A toi de jouer !</h1>
 <h2>Trouve la corrélation du nuage de points ci-dessous !</h2>
 
 <?php
@@ -239,7 +239,7 @@
 
    <form method="post">
    Corrélation : <input type="number" name="cor" min = 0 max = 1 step = 0.01 />
-   <input type="submit" name="valider" value="OK"/> <br />
+   <input type="submit" name="valider" value="OK"/> Ok <br />
    </form>
 
 
