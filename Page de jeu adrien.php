@@ -254,10 +254,10 @@
       if ( isset( $_POST['valider'] ) ) {
 
            $Cor = $_POST['cor'];
-           echo " <p> tu pensais que la correlation était de : $Cor</p>";
+           echo " <p> Selon toi, la corrélation est de : $Cor</p>";
            $ECART = $Cor-$R2;
-           echo " <p> la corrélation est de : $R2</p>";
-           echo " <p> tu as un ecart de : $ECART</p>";
+           echo " <p> La corrélation était de : $R2</p>";
+           echo " <p> L'écart est de : $ECART</p>";
 
            exit;
 
