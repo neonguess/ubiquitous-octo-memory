@@ -22,6 +22,15 @@
 <h1>A toi de jouer !</h1>
 <h2>Trouve la corrélation du nuage de points ci-dessous !</h2>
 
+<div class="form">
+<label for="guess"> <p>Enter a guess:</p> </label>
+<input type="number" id="guess" class"guess" min = 0 max = 1 step = 0.01 />
+<br>
+<input type = "submit" value = "valider"
+class = "valider" id = "Valider">
+</div>
+
+
 <?php
 
   $RandMax = random_int(1,100);
@@ -237,39 +246,43 @@
    </script>
 
    <?php
-
+   if ($R2<0) {
+     $R2= $R2*(-1);
+   }
    echo " <p>$R2</p> ";
+
 
     ?>
 
+    <script type = "text/javascript">
 
-   <form method="post">
-   Corrélation : <input type="number" name="cor" min = 0 max = 1 step = 0.01 />
-   <span class="notranslate"><input type="submit" name="valider" value="OK"/></span><br />
-   </form>
+      document.getElementById("Valider").onclick = function(){
+      var x = document.getElementById("guess").value;
+      var y = <?php echo "$R2"; ?>
+
+      if(x >= y-0.05 && x < y+0.05)
+      {
+      alert("CONGRATULATIONS!!! YOU GUESSED IT RIGHT, IT WAS " + y);
+      }
+      else if(x > y) /* if guessed number is greater
+      than actual number*/
+      {
+      alert("OOPS SORRY!! TRY A SMALLER NUMBER");
+      }
+      else
+      {
+      alert("OOPS SORRY!! TRY A GREATER NUMBER")
+      }
+      }
+    </script>
+
+    <form>
+    <input Type="button" value="Nouveau graphique" onClick="history.go(0)">
+    </form>
 
 
-  <?php
 
-    if ($R2<0) {
 
-      $R2 = $R2*-1;
-
-    }
-
-      if ( isset( $_POST['valider'] ) ) {
-
-           $Cor = $_POST['cor'];
-           echo " <p> Selon toi, la corrélation est de : $Cor</p>";
-           $ECART = $Cor-$R2;
-           echo " <p> La corrélation était de : $R2</p>";
-           echo " <p> L'écart est de : $ECART</p>";
-
-           exit;
-
-         }
-
-   ?>
 
 
 
